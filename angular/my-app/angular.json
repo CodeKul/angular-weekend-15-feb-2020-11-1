@@ -119,6 +119,46 @@
           }
         }
       }
+    },
+    "wallet": {
+      "projectType": "library",
+      "root": "projects/wallet",
+      "sourceRoot": "projects/wallet/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/wallet/tsconfig.lib.json",
+            "project": "projects/wallet/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/wallet/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/wallet/src/test.ts",
+            "tsConfig": "projects/wallet/tsconfig.spec.json",
+            "karmaConfig": "projects/wallet/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/wallet/tsconfig.lib.json",
+              "projects/wallet/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "my-app"
 }
