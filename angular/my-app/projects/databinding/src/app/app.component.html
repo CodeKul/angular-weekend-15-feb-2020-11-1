@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-muted"> Project Name is {{title}} {{color}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div>
+        <input [type]="type" [style.border]="redBorder" >
+      </div> 
+      <div>
+        <input type="button" (click)="btnClk()" value="Okay" class="btn btn-secondary">
+      </div>      
+    </div>
+    <div [class.alert]="isAl" [class.alert-info]="isAl" [attr.role]="'role'">
+      <input type="text" [(ngModel)]="color">
+    </div>
+  </div>
+</div>

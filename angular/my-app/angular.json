@@ -276,6 +276,123 @@
           }
         }
       }
+    },
+    "databinding": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/databinding",
+      "sourceRoot": "projects/databinding/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/databinding",
+            "index": "projects/databinding/src/index.html",
+            "main": "projects/databinding/src/main.ts",
+            "polyfills": "projects/databinding/src/polyfills.ts",
+            "tsConfig": "projects/databinding/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/databinding/src/favicon.ico",
+              "projects/databinding/src/assets"
+            ],
+            "styles": [
+              "projects/databinding/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/databinding/src/environments/environment.ts",
+                  "with": "projects/databinding/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "databinding:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "databinding:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "databinding:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/databinding/src/test.ts",
+            "polyfills": "projects/databinding/src/polyfills.ts",
+            "tsConfig": "projects/databinding/tsconfig.spec.json",
+            "karmaConfig": "projects/databinding/karma.conf.js",
+            "assets": [
+              "projects/databinding/src/favicon.ico",
+              "projects/databinding/src/assets"
+            ],
+            "styles": [
+              "projects/databinding/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/databinding/tsconfig.app.json",
+              "projects/databinding/tsconfig.spec.json",
+              "projects/databinding/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/databinding/e2e/protractor.conf.js",
+            "devServerTarget": "databinding:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "databinding:serve:production"
+            }
+          }
+        }
+      }
     }},
   "defaultProject": "my-app"
 }
