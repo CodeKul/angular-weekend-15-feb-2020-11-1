@@ -1,5 +1,5 @@
+import { ToastInfo } from './toast-info';
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { OuterSubscriber } from 'rxjs/internal/OuterSubscriber';
 
 @Component({
   selector: 'app-toast',
@@ -10,6 +10,9 @@ export class ToastComponent implements OnInit {
 
   @Input('wantToDisplay')
   isShown : boolean
+
+  @Input()
+  info : ToastInfo
 
   @Output()
   cardClose : EventEmitter<boolean> = new EventEmitter()

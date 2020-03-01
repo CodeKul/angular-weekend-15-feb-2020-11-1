@@ -12,7 +12,7 @@
   </div>
   <div class="row mt-4">
     <div class="col-md-12">
-      <app-toast [wantToDisplay]="showFlag" (cardClose)="showFlag = $event"></app-toast>
+      <app-toast [wantToDisplay]="showFlag" (cardClose)="showFlag = $event" [info]="{'title' :'android', 'body':'This is toast example from bootsrap', 'tms':'3 sec ago'}"></app-toast>
     </div>
   </div>
 </div>
