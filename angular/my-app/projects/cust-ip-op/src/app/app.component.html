@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h5 class="text-muted">Custom Input and Output - Databinding</h5>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      {{showFlag}}
+      <input class="btn btn-info" type="button" value="Toast It" (click)="openToast()">
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-md-12">
+      <app-toast [wantToDisplay]="showFlag" (cardClose)="showFlag = $event"></app-toast>
+    </div>
+  </div>
+</div>
