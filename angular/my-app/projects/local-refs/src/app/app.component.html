@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <input type="text" [(ngModel)]="title">
+            <input type="text" #nm>
+            <input type="button" value="Okay" class="btn btn-info" (click)="consoleValue()">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <app-sample-comp>
+                <p class="jumbotron" #jumbo>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Delectus ipsa ad magnam ipsum inventore
+                    cupiditate porro quaerat aut similique quisquam molestiae, sit iure accusantium omnis natus
+                    voluptatibus sed consequuntur excepturi!
+                </p>
+            </app-sample-comp>
+        </div>
+    </div>
+</div>
