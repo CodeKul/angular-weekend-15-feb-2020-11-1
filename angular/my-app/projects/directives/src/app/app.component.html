@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <small class="text-muted">Directives</small>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Quotation price</h4>
+        <p>Your Quotation Price is 4569</p>
+        <p class="mb-0"><u (click)="onDetails()">For Detailed Quotation Click Here</u></p>
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="showDetailed">
+    <div class="col-md-12">
+      <table>
+        <tr>
+          <th>ID</th>
+          <th>To</th>
+          <th>From</th>
+          <th>Quantity</th>
+          <th>Unit Prie</th>
+          <th>Total</th>
+        </tr>
+        <tr *ngFor="let qt of quotations;">
+          <td>{{qt.id}}</td>
+          <td>{{qt.to}}</td>
+          <td>{{qt.from}}</td>
+          <td>{{qt.qty}}</td>
+          <td>{{qt.unitPrice}}</td>
+          <td>{{qt.qty*qt.unitPrice}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <ng-template [ngIf]="showDetailed">
+    <div>
+      Hi
+    </div>
+  </ng-template>
+
+  <div class="row">
+    <div class="col-md-12">
+      <input type="text" value="Okay" [ngClass]="{'text-muted' : true, 'alert' : true}">
+      <input type="text" [ngStyle]="st" value="In Iot">
+      <input type="text" appMagic>
+    </div>
+  </div>
+
+</div>
