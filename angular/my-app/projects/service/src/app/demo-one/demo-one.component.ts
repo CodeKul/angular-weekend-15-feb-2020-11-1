@@ -7,14 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./demo-one.component.css'],
   // providers: [DemoService]
 })
-export class DemoOneComponent implements OnInit {
+export class DemoOneComponent  {
 
   counter = 0
 
   constructor(private sr : DemoService) { }
-
-  ngOnInit(): void {
-  }
 
   clk(num : number) {
     if(num === 1) {

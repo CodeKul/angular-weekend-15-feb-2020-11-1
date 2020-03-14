@@ -1,3 +1,4 @@
+import { AllService } from './demo.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'service';
+
+  constructor(
+    private all: AllService
+  ) { }
 }
